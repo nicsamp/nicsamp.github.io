@@ -1,0 +1,44 @@
+body {
+    background-color: gray;
+}
+
+#tools {
+    background-color: black;
+
+    width: 80%;
+    height: 40vh;
+    border: 10px solid black;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.tool {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    background-color: rgba(255,255,255,0.1);
+
+    box-sizing: border-box;
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+    border: medium ridge rgba(255,255,255,0.5);
+    border-radius: 50%;
+    margin: 2.5%;
+}
+
+#stopwatch {
+    color: dodgerblue;
+}
+
+
+#calculator {
+    color: orange;
+}
+
+#stopwatch-icon, #calculator-icon {
+    font-size: 5em;
+}

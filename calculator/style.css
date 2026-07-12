@@ -1,0 +1,89 @@
+body {
+    background-color: gray;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.app-box {
+    background-color: black;
+
+    width: 80%;
+    border: solid 10px black;
+    border-radius: 10px;
+    margin: auto;
+}
+
+#result {
+    color: whitesmoke;
+
+    width: 100%;
+    margin: 0 0 5% 0;
+
+    overflow-y: auto;
+
+    font-family: 'Lucida Sans', 'Courier New', 'Courier', monospace;
+    font-weight: bold;
+    font-size: 8em;
+    text-align: end;
+}
+
+.calc-symbols {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+
+    font-size: 2em;
+}
+
+.symbol {
+    color: whitesmoke;
+    font-size: inherit !important;
+}
+
+.calc-buttons-table {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    margin: 10px auto;
+
+    table-layout: fixed;
+    
+    text-align: center;
+}
+
+.calc-button {
+    background-color: rgba(255,255,255,0.1);
+
+    width: 92%;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: ridge medium rgba(255,255,255,0.5);
+    border-radius: 50%;
+
+    color: whitesmoke;
+    font-family: 'Lucida Sans', 'Courier New', 'Courier', monospace;
+    font-weight: bold;
+    font-size: 5em;
+}
+
+.calc-button-highlight {
+    color: limegreen;
+}
+
+.calc-button-operator {
+    color: rgb(255, 255, 136);
+}
+
+.calc-button-clear {
+    color: rgb(255, 69, 69);
+}
+
+.calc-button-memory {
+    color: rgb(36, 109, 211);
+}
+
+.calc-button-modifier {
+    color: rgb(178, 178, 178);
+}

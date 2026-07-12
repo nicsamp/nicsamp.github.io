@@ -1,0 +1,94 @@
+body {
+    background: gray;
+}
+
+#stopwatch {
+    background: black;
+
+    width: 80%;
+    border: 10px solid black;
+    border-radius: 10px;
+    margin: auto;
+}
+
+#time, #laps-box li {
+    color: whitesmoke;
+    font-family: "Lucida Sans", "Courier New", Courier, monospace;
+    font-weight: bold;  
+}
+
+#time {
+    width: fit-content;
+    margin: 20px auto;
+
+    font-size: 4rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.action-button {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+
+    width: 20vw;
+    aspect-ratio: 1;
+    border: medium ridge rgba(255,255,255,0.5);
+    border-radius: 50%;
+    margin: 10px auto;
+
+}
+
+#play {
+    color: limegreen;
+    text-shadow: 2px 2px 3px green;
+}
+
+#pause {
+    color: yellow;
+    text-shadow: 2px 2px 3px gold;
+}
+
+#lap {
+    color: deepskyblue;
+    text-shadow: 2px 2px 3px dodgerblue;
+}
+
+.reset-unused {
+    color: orange;
+    text-shadow: 2px 2px 3px chocolate;
+}
+
+.reset-used {
+    color: lightgray;
+    text-shadow: 2px 2px 3px gray;   
+}
+
+#play-icon, #reset-icon, #pause-icon, #lap-icon {
+    font-size: 10rem;
+}
+
+#laps-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-height: 10rem;
+    padding: 0;
+    margin: 10px auto;
+
+    overflow-y: auto;
+
+    list-style: decimal-leading-zero;
+}
+
+#laps-box li {
+    font-size: 1.5rem;
+}
+

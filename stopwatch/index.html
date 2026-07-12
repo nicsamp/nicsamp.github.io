@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="stopwatch">
+        <p id="time">00 : 00 . 00</p>
+        <ol id="laps-box">
+        </ol>
+        <div id="paused-buttons" class="button-container">
+            <button type="button" id="play" class="action-button" onclick="play()"><i class="material-icons" id="play-icon">play_arrow</i></button>
+            <button type="button" id="reset" class="action-button reset-used" onclick="reset()"><i class="material-icons" id="reset-icon">autorenew</i></button>
+        </div>
+        <div id="playing-buttons" class="button-container hidden">
+            <button type="button" id="pause" class="action-button" onclick="pause()"><i class="material-icons" id="pause-icon">pause</i></button>
+            <button type="button" id="lap" class="action-button" onclick="lap()"><i class="material-icons" id="lap-icon">flag</i></button>
+        </div>
+    </div>
+</body>
+</html>
