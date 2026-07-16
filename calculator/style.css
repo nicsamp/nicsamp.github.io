@@ -23,7 +23,7 @@ body {
 
     overflow-y: auto;
 
-    font-family: 'Lucida Sans', 'Courier New', 'Courier', monospace;
+    font-family: 'Noto Sans', 'Noto Sans Symbols', 'Noto Sans Math', 'Noto Sans Symbols 2', 'Lucida Sans', sans-serif;
     font-weight: bold;
     font-size: 8em;
     text-align: end;
@@ -63,7 +63,7 @@ body {
     border-radius: 50%;
 
     color: whitesmoke;
-    font-family: 'Lucida Sans', 'Courier New', 'Courier', monospace;
+    font-family: 'Noto Sans', 'Noto Sans Symbols', 'Noto Sans Math', 'Noto Sans Symbols 2', 'Lucida Sans', sans-serif;
     font-weight: bold;
     font-size: 5em;
 }
