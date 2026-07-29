@@ -77,4 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
     pause_lap_div = document.getElementById("playing-buttons");
     reset_button = document.getElementById("reset");
     laps_box = document.getElementById("laps-box");
+    document.getElementById("lap").addEventListener("click", lap);
+    document.getElementById("play").addEventListener("click", play);
+    document.getElementById("pause").addEventListener("click", pause);
+    document.getElementById("reset").addEventListener("click", reset);
 })

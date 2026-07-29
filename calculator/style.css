@@ -1,5 +1,8 @@
 body {
     background-color: gray;
+
+    display: flex;
+    align-items: flex-start;
 }
 
 .hidden {
@@ -9,23 +12,45 @@ body {
 .app-box {
     background-color: black;
 
-    width: 80%;
-    border: solid 10px black;
+    width: calc(100% - 116px);
+    border: 10px solid black;
     border-radius: 10px;
-    margin: auto;
+    margin: 0 48px;
+}
+
+#back-button {
+    background-color: rgba(255,255,255,0.1);
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 8px;
+    left: 8px;
+
+    color: whitesmoke;
+    font-family: 'Noto Sans', 'Noto Sans Symbols', 'Noto Sans Math', 'Noto Sans Symbols 2', 'Lucida Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+    text-align: center;
 }
 
 #result {
     color: whitesmoke;
 
     width: 100%;
-    margin: 0 0 5% 0;
+    margin: 0 0 20px 0;
 
-    overflow-y: auto;
+    overflow: auto;
+    white-space: nowrap;
 
     font-family: 'Noto Sans', 'Noto Sans Symbols', 'Noto Sans Math', 'Noto Sans Symbols 2', 'Lucida Sans', sans-serif;
     font-weight: bold;
-    font-size: 8em;
+    font-size: 5em;
     text-align: end;
 }
 
@@ -45,7 +70,7 @@ body {
 
 .calc-buttons-table {
     width: 100%;
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 5 / 5;
     margin: 10px auto;
 
     table-layout: fixed;
@@ -56,7 +81,7 @@ body {
 .calc-button {
     background-color: rgba(255,255,255,0.1);
 
-    width: 92%;
+    width: 95%;
     aspect-ratio: 1 / 1;
     padding: 0;
     border: ridge medium rgba(255,255,255,0.5);
@@ -65,7 +90,7 @@ body {
     color: whitesmoke;
     font-family: 'Noto Sans', 'Noto Sans Symbols', 'Noto Sans Math', 'Noto Sans Symbols 2', 'Lucida Sans', sans-serif;
     font-weight: bold;
-    font-size: 5em;
+    font-size: 1.8em;
 }
 
 .calc-button-highlight {

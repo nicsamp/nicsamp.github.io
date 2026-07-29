@@ -5,10 +5,31 @@ body {
 #stopwatch {
     background: black;
 
-    width: 80%;
+    width: auto;
     border: 10px solid black;
     border-radius: 10px;
-    margin: auto;
+    margin: 0 48px;
+}
+
+#back-button {
+    background-color: rgba(255,255,255,0.1);
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 8px;
+    left: 8px;
+
+    color: whitesmoke;
+    font-family: 'Noto Sans', 'Noto Sans Symbols', 'Noto Sans Math', 'Noto Sans Symbols 2', 'Lucida Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+    text-align: center;
 }
 
 #time, #laps-box li {
@@ -18,10 +39,14 @@ body {
 }
 
 #time {
-    width: fit-content;
+    width: 100%;
     margin: 20px auto;
 
-    font-size: 4rem;
+    text-align: center;
+    font-size: 3em;
+
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .button-container {
@@ -37,8 +62,8 @@ body {
     display: inline-block;
     background: rgba(255,255,255,0.1);
 
-    width: 20vw;
-    aspect-ratio: 1;
+    width: 120px;
+    height: 120px;
     border: medium ridge rgba(255,255,255,0.5);
     border-radius: 50%;
     margin: 10px auto;
@@ -71,7 +96,7 @@ body {
 }
 
 #play-icon, #reset-icon, #pause-icon, #lap-icon {
-    font-size: 10rem;
+    font-size: 8em;
 }
 
 #laps-box {
@@ -79,13 +104,17 @@ body {
     flex-direction: column;
     align-items: center;
 
-    max-height: 10rem;
+    width: 100%;
+    height: 180px;
     padding: 0;
     margin: 10px auto;
 
-    overflow-y: auto;
+    white-space: nowrap;
+    overflow: auto;
 
     list-style: decimal-leading-zero;
+    list-style-position: inside;
+
 }
 
 #laps-box li {

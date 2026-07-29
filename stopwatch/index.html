@@ -11,18 +11,19 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <a id="back-button" href="/"><</a>
     <div id="stopwatch">
         <p id="time">00 : 00 . 00</p>
-        <ol id="laps-box">
-        </ol>
         <div id="paused-buttons" class="button-container">
-            <button type="button" id="play" class="action-button" onclick="play()"><i class="material-symbols-outlined" id="play-icon">play_arrow</i></button>
-            <button type="button" id="reset" class="action-button reset-used" onclick="reset()"><i class="material-symbols-outlined" id="reset-icon">refresh</i></button>
+            <button type="button" id="play" class="action-button"><i class="material-symbols-outlined" id="play-icon">play_arrow</i></button>
+            <button type="button" id="reset" class="action-button reset-used"><i class="material-symbols-outlined" id="reset-icon">refresh</i></button>
         </div>
         <div id="playing-buttons" class="button-container hidden">
-            <button type="button" id="pause" class="action-button" onclick="pause()"><i class="material-symbols-outlined" id="pause-icon">pause</i></button>
-            <button type="button" id="lap" class="action-button" onclick="lap()"><i class="material-symbols-outlined" id="lap-icon">flag</i></button>
+            <button type="button" id="pause" class="action-button"><i class="material-symbols-outlined" id="pause-icon">pause</i></button>
+            <button type="button" id="lap" class="action-button"><i class="material-symbols-outlined" id="lap-icon">flag</i></button>
         </div>
+        <ol id="laps-box">
+        </ol>
     </div>
 </body>
 </html>

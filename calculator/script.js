@@ -1,154 +1,151 @@
-function one() {
-    if (errored) {
+function add_digit(digit) {
+    if (errored || num.toString().length >= 10 || (digit == "." && num.toString().includes("."))) {
         return;
     }
-    if (num.toString().length >= 10) {
-        return;
+    if (current_num == 0) {
+        numbers[1] = 0;
+        operation = "";
     }
-    num = parseFloat(num.toString() + "1");
-    numbers[current_num] = num;
-    show_number(num);
-}
 
-function two() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = parseFloat(num.toString() + "2");
-    numbers[current_num] = num;
-    show_number(num);
-}
-
-function three() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = parseFloat(num.toString() + "3");
-    numbers[current_num] = num;
-    show_number(num);
-}
-
-function four() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = parseFloat(num.toString() + "4");
-    numbers[current_num] = num;
-    show_number(num);
-}
-
-function five() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = parseFloat(num.toString() + "5");
-    numbers[current_num] = num;
-    show_number(num);
-}
-
-function six() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = parseFloat(num.toString() + "6");
-    numbers[current_num] = num;
-    show_number(num);
-}
-
-function seven() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = parseFloat(num.toString() + "7");
-    numbers[current_num] = num;
-    show_number(num);
-}
-
-function eight() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = parseFloat(num.toString() + "8");
-    numbers[current_num] = num;
-    show_number(num);
-}
-
-function nine() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = parseFloat(num.toString() + "9");
-    numbers[current_num] = num;
-    show_number(num);
-}
-
-function zero() {
-    if (errored) {
-        return;
-    }
-    if (num.toString().length >= 10) {
-        return;
-    }
-    num = num.toString() + "0";
-    if (!num.toString().includes(".")) {
+    num = num.toString() + digit
+    
+    if (((digit != "0") && (digit != ".")) || ((digit == "0") && !num.toString().includes("."))) {
         num = parseFloat(num);
         numbers[current_num] = num;
     }
+
     show_number(num);
 }
 
-function point() {
+function set_const(constant) {
     if (errored) {
         return;
     }
-    if (num.toString().length >= 10) {
-        return;
+    if (current_num == 0) {
+        numbers[1] = 0;
+        operation = "";
     }
-    if (num.toString().includes(".")) {
-        return;
-    }
-    num = num.toString() + ".";
-    show_number(num);
-}
 
-function pi() {
-    if (errored) {
-        return;
-    }
-    numbers[current_num] = Math.PI;
+    numbers[current_num] = constant;
     show_number(numbers[current_num]);
 
     num = 0;
+}
+
+function binary_op(op) {
+    if (errored) {
+        return;
+    }
+    if (current_num == 1) {
+        do_operation();
+    }
+
+    current_num = 1;
+    operation = op;
+}
+
+function do_operation() {
+    if (operation == "+") {
+        numbers[0] = numbers[0] + numbers[1]
+    }
+    if (operation == "-") {
+        numbers[0] = numbers[0] - numbers[1]
+    }
+    if (operation == "*") {
+        numbers[0] = numbers[0] * numbers[1]
+    }
+    if (operation == "/") {
+        numbers[0] = numbers[0] / numbers[1]
+    }
+    if (operation == "**") {
+        numbers[0] = numbers[0] ** numbers[1]
+    }
+
+    current_num = 0;
+    num = 0;
+    show_number(numbers[0]);
+}
+
+function show_number(number) {
+    if (number == Infinity) {
+        number = "∞";
+    }
+    else if (Number.isNaN(number)) {
+        number = "!";
+        error_icon.classList.remove("hidden");
+        errored = true;
+    }
+
+    if (Math.abs(number) > 9999999999) {
+        big_icon.classList.remove("hidden");
+    }
+    else {
+        big_icon.classList.add("hidden");
+    }
+
+    result_text.textContent = number;
+}
+
+
+
+
+function one() {
+    add_digit("1")
+}
+
+function two() {
+    add_digit("2")
+}
+
+function three() {
+    add_digit("3")
+}
+
+function four() {
+    add_digit("4")
+}
+
+function five() {
+    add_digit("5")
+}
+
+function six() {
+    add_digit("6")
+}
+
+function seven() {
+    add_digit("7")
+}
+
+function eight() {
+    add_digit("8")
+}
+
+function nine() {
+    add_digit("9")
+}
+
+function zero() {
+    add_digit("0")
+}
+
+function point() {
+    add_digit(".")
+}
+
+function pi() {
+    set_const(Math.PI)
 }
 
 function sqrt() {
     if (errored) {
         return;
     }
+    if (current_num == 0) {
+        numbers[1] = 0;
+        operation = "";
+    }
+
     numbers[current_num] = Math.sqrt(parseFloat(numbers[current_num]));
     show_number(numbers[current_num]);
 
@@ -159,6 +156,11 @@ function plusminus() {
     if (errored) {
         return;
     }
+    if (current_num == 0) {
+        numbers[1] = 0;
+        operation = "";
+    }
+
     let was_zero = false;
     if (num == 0) {
         num = numbers[current_num];
@@ -202,6 +204,9 @@ function cl() {
     num = 0;
     numbers = [0, 0];
     current_num = 0;
+    errored = false;
+    operation = "";
+    error_icon.classList.add("hidden");
     show_number(num);
 }
 
@@ -215,13 +220,7 @@ function memsave() {
 }
 
 function memload() {
-    if (errored) {
-        return;
-    }
-    numbers[current_num] = memory;
-    show_number(numbers[current_num]);
-
-    num = 0;
+    set_const(memory)
 }
 
 function memclear() {
@@ -234,63 +233,23 @@ function memclear() {
 }
 
 function plus() {
-    if (errored) {
-        return;
-    }
-    if (current_num == 1) {
-        do_operation();
-    }
-    current_num = 1;
-    operation = "+";
-    num = 0;
+    binary_op("+")
 }
 
 function minus() {
-    if (errored) {
-        return;
-    }
-    if (current_num == 1) {
-        do_operation();
-    }
-    current_num = 1;
-    operation = "-";
-    num = 0;
+    binary_op("-")
 }
 
 function times() {
-    if (errored) {
-        return;
-    }
-    if (current_num == 1) {
-        do_operation();
-    }
-    current_num = 1;
-    operation = "*";
-    num = 0;
+    binary_op("*")
 }
 
 function div() {
-    if (errored) {
-        return;
-    }
-    if (current_num == 1) {
-        do_operation();
-    }
-    current_num = 1;
-    operation = "/";
-    num = 0;
+    binary_op("/")
 }
 
 function pow() {
-    if (errored) {
-        return;
-    }
-    if (current_num == 1) {
-        do_operation();
-    }
-    current_num = 1;
-    operation = "**";
-    num = 0;
+    binary_op("**")
 }
 
 function equal() {
@@ -298,53 +257,6 @@ function equal() {
         return;
     }
     do_operation();
-}
-
-function do_operation() {
-    if (operation == "+") {
-        numbers[0] = numbers[0] + numbers[1]
-    }
-    if (operation == "-") {
-        numbers[0] = numbers[0] - numbers[1]
-    }
-    if (operation == "*") {
-        numbers[0] = numbers[0] * numbers[1]
-    }
-    if (operation == "/") {
-        numbers[0] = numbers[0] / numbers[1]
-    }
-    if (operation == "**") {
-        numbers[0] = numbers[0] ** numbers[1]
-    }
-
-    numbers[1] = 0;
-    current_num = 0;
-    operation = "";
-    num = 0;
-    show_number(numbers[0]);
-}
-
-function show_number(number) {
-    if (number == Infinity) {
-        number = "∞";
-    }
-    else if (Number.isNaN(number)) {
-        number = "!";
-        error_icon.classList.remove("hidden");
-        errored = true;
-    }
-    else {
-        error_icon.classList.add("hidden");
-    }
-
-    if (Math.abs(number) > 9999999999) {
-        big_icon.classList.remove("hidden");
-    }
-    else {
-        big_icon.classList.add("hidden");
-    }
-
-    result_text.textContent = number;
 }
 
 let numbers = [0,0];
