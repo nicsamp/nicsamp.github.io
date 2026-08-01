@@ -11,7 +11,8 @@ body {
 }
 
 .material-symbols-outlined {
-    color: inherit;
+    font-size: inherit !important;
+    color: inherit !important;
 }
 
 .app-box {
