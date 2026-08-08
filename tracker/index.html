@@ -18,37 +18,45 @@
     <header>
         <a href="./">Tracker</a>
     </header>
-    <div class="app">
-        <!-- <nav>
-            
-        </nav>
-        <button class="open-nav-button">
-            <i class="material-symbols-outlined">menu</i>
-        </button> -->
-        <button class="tracker-button-change-page" id="button-page-back">
-            <i class="material-symbols-outlined">arrow_back</i>
-        </button>
-        <div class="tracker">
-            <div class="tracker-actions">
-                <button class="hidden" id="button-action-today">
-                    <i class="material-symbols-outlined">today</i>
-                </button>
-            </div>
-            <div class="tracker-content">
-                <div class="tracker-page">
-                    <h1 id="date">
-                        ??? ?
-                    </h1>
-                    <textarea id="content-1" data-id="content_1"></textarea>
-                </div>
-                <div class="tracker-page">
-                    <textarea id="content-2" data-id="content_2"></textarea>
-                </div>
-            </div>
+    <div class="content">
+        <div class="tracker-views">
+            <button class="tracker-view-button selected" id="button-view-day">
+                <i class="material-symbols-outlined">calendar_today</i>
+            </button>
+            <button class="tracker-view-button" id="button-view-week">
+                <i class="material-symbols-outlined">date_range</i>
+            </button>
+            <button class="tracker-view-button" id="button-view-month">
+                <i class="material-symbols-outlined">calendar_month</i>
+            </button>
         </div>
-        <button class="tracker-button-change-page" id="button-page-forward">
-            <i class="material-symbols-outlined">arrow_forward</i>
-        </button>
+        <div class="tracker-and-controls">
+            <button class="tracker-button-change-page" id="button-page-back">
+                <i class="material-symbols-outlined">arrow_back</i>
+            </button>
+            <!-- <nav>
+                
+            </nav>
+            <button class="open-nav-button">
+                <i class="material-symbols-outlined">menu</i>
+            </button> -->
+            <div class="tracker-box">
+                <div class="tracker-actions">
+                    <button id="button-action-today">
+                        <i class="material-symbols-outlined">today</i>
+                    </button>
+                </div>
+                <div class="tracker-content">
+                    <div class="tracker-page" id="page-1">
+                    </div>
+                    <div class="tracker-page" id="page-2">
+                    </div>
+                </div>
+            </div>
+            <button class="tracker-button-change-page" id="button-page-forward">
+                <i class="material-symbols-outlined">arrow_forward</i>
+            </button>
+        </div>
     </div>
 </body>
 </html>

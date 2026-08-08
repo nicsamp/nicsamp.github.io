@@ -3,10 +3,6 @@
     color: inherit !important;
 }
 
-.hidden {
-    visibility: hidden;
-}
-
 html, body {
     height: 100%;
     margin: 0;
@@ -37,15 +33,52 @@ header a {
     color: inherit;
 }
 
-.app {
+.content {
     width: 100%;
     height: calc(100% - 60px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(245, 234, 200);
+}
+
+.tracker-views {
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.tracker-views button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 5px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: rgb(245, 234, 200);
+    background: rgb(0, 0, 0, 0.2);
+    font-size: 2rem;
+    color: black;
+}
+
+.tracker-views button.selected {
+    background: rgb(0, 0, 0, 0.8);
+    color: whitesmoke;
+}
+
+.tracker-and-controls {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*nav {
@@ -91,9 +124,8 @@ header a {
     background: rgb(180, 180, 180, 0.2);
 }
 
-.tracker {
-    width: auto;
-    height: 100%;
+.tracker-box {
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -119,6 +151,8 @@ header a {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
+    transform: translateY(42px);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,12 +160,36 @@ header a {
     background: rgb(150, 90, 47);
     font-size: 1.8rem;
     color: white;
+    transition: transform 1.5s;
 }
+
+@keyframes buttonShow {
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes buttonHide {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(42px);
+    }
+}
+
+.tracker-actions button.button-show-animation {
+    animation: buttonShow 1.5s ease forwards;
+} 
+
+.tracker-actions button.button-hide-animation {
+    animation: buttonHide 1.5s ease forwards;
+} 
 
 .tracker-content {
     box-sizing: border-box;
     width: auto;
-    height: clamp(0px, min(calc(100% - 120px), calc((100vw - 120px) / 1.414)), 297mm);
+    height: clamp(0px, min(calc(100vh - 20px - 120px), calc((100vw - 120px) / 1.414)), 297mm);
     aspect-ratio: 1.414 / 1;
     border: 2px inset rgb(128, 128, 128, 0.5);
     border-radius: 20px;
@@ -170,10 +228,6 @@ header a {
     flex-direction: column;
 
     font-family: inherit;
-}
-
-.tracker-page p {
-    margin: 2px;
 }
 
 .tracker-page h1 {
