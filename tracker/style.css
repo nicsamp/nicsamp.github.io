@@ -38,6 +38,53 @@ header a {
     height: calc(100% - 60px);
 
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+nav {
+    width: 120px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+}
+
+.nav-content {
+    width: 80px;
+    height: 100%;
+
+    background: cornflowerblue;
+}
+
+.open-nav-button {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 6px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: cornflowerblue;
+    font-size: 2rem;
+}
+
+.tracker {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -80,30 +127,6 @@ header a {
     align-items: center;
     justify-content: center;
 }
-
-/*nav {
-    width: 80px;
-    height: 100%;
-
-    background: cornflowerblue;
-}
-
-.open-nav-button {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    border: none;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin: 6px 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: cornflowerblue;
-    font-size: 2rem;
-}*/
 
 .tracker-button-change-page {
     width: 42px;
